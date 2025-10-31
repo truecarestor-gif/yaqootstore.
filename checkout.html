@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الشراء - متجر ياقوت</title>
+    
+    <!-- الخطوط من Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- ملف CSS الرئيسي -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+    <!-- شريط الإعلانات العلوي -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="announcement">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>عروض خاصة - خصم يصل إلى 50% على منتجات مختارة!</span>
+                </div>
+                <div class="top-links">
+                    <a href="#"><i class="fas fa-phone"></i> اتصل بنا</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> المساعدة</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- رأس الصفحة -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1><i class="fas fa-gem"></i> متجر ياقوت</h1>
+                    </a>
+                </div>
+                <div class="checkout-progress">
+                    <div class="progress-step active">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>السلة</span>
+                    </div>
+                    <div class="progress-line active"></div>
+                    <div class="progress-step active">
+                        <i class="fas fa-truck"></i>
+                        <span>الشحن</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div class="progress-step">
+                        <i class="fas fa-credit-card"></i>
+                        <span>الدفع</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- محتوى صفحة الشراء -->
+    <main class="checkout-main">
+        <div class="container">
+            <div class="checkout-container">
+                <!-- نموذج الشحن والدفع -->
+                <div class="checkout-form-section">
+                    <h2 class="section-title">معلومات الشحن</h2>
+                    
+                    <form id="checkoutForm" class="checkout-form">
+                        <!-- معلومات العميل -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-user"></i> المعلومات الشخصية</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">الاسم الأول *</label>
+                                    <input type="text" id="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">الاسم الأخير *</label>
+                                    <input type="text" id="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">البريد الإلكتروني *</label>
+                                    <input type="email" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">رقم الهاتف *</label>
+                                    <input type="tel" id="phone" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- عنوان الشحن -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-map-marker-alt"></i> عنوان الشحن</h3>
+                            <div class="form-group">
+                                <label for="address">العنوان *</label>
+                                <input type="text" id="address" placeholder="الشارع، رقم المنزل" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">المدينة *</label>
+                                    <select id="city" required>
+                                        <option value="">اختر المدينة</option>
+                                        <option value="sanaa">صنعاء</option>
+                                        <option value="aden">عدن</option>
+                                        <option value="taiz">تعز</option>
+                                        <option value="hodeidah">الحديدة</option>
+                                        <option value="ibb">إب</option>
+                                        <option value="dhamar">ذمار</option>
+                                        <option value="mukalla">المكلا</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="district">المنطقة</label>
+                                    <input type="text" id="district">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- طريقة الشحن -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-truck"></i> طريقة الشحن</h3>
+                            <div class="shipping-options">
+                                <label class="shipping-option">
+                                    <input type="radio" name="shipping" value="standard" checked>
+                                    <div class="option-content">
+                                        <div class="option-info">
+                                            <strong>شحن عادي</strong>
+                                            <span>3-5 أيام عمل</span>
+                                        </div>
+                                        <div class="option-price">مجاني</div>
+                                    </div>
+                                </label>
+                                
+                                <label class="shipping-option">
+                                    <input type="radio" name="shipping" value="express">
+                                    <div class="option-content">
+                                        <div class="option-info">
+                                            <strong>شحن سريع</strong>
+                                            <span>1-2 يوم عمل</span>
+                                        </div>
+                                        <div class="option-price">500 ريال</div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- طريقة الدفع -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-credit-card"></i> طريقة الدفع</h3>
+                            <div class="payment-options">
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="cash" checked>
+                                    <div class="option-content">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        <div class="option-info">
+                                            <strong>الدفع عند الاستلام</strong>
+                                            <span>ادفع نقداً عند استلام الطلب</span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="card">
+                                    <div class="option-content">
+                                        <i class="fas fa-credit-card"></i>
+                                        <div class="option-info">
+                                            <strong>بطاقة ائتمان</strong>
+                                            <span>Visa, Mastercard</span>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="payment-option">
+                                    <input type="radio" name="payment" value="bank">
+                                    <div class="option-content">
+                                        <i class="fas fa-university"></i>
+                                        <div class="option-info">
+                                            <strong>تحويل بنكي</strong>
+                                            <span>حوالة بنكية مباشرة</span>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- ملاحظات إضافية -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-comment"></i> ملاحظات الطلب (اختياري)</h3>
+                            <div class="form-group">
+                                <textarea id="notes" rows="4" placeholder="ملاحظات حول الطلب أو التوصيل..."></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- ملخص الطلب -->
+                <div class="order-summary-section">
+                    <div class="order-summary-sticky">
+                        <h2 class="section-title">ملخص الطلب</h2>
+                        
+                        <div class="order-items" id="orderItems">
+                            <!-- سيتم ملؤها بواسطة JavaScript -->
+                        </div>
+                        
+                        <div class="order-totals">
+                            <div class="total-row">
+                                <span>المجموع الفرعي:</span>
+                                <span id="subtotal">0 ريال</span>
+                            </div>
+                            <div class="total-row">
+                                <span>الشحن:</span>
+                                <span id="shippingCost">مجاني</span>
+                            </div>
+                            <div class="total-row discount-row">
+                                <span>الخصم:</span>
+                                <span id="discount">0 ريال</span>
+                            </div>
+                            <div class="total-row grand-total">
+                                <span>المجموع الكلي:</span>
+                                <span id="grandTotal">0 ريال</span>
+                            </div>
+                        </div>
+
+                        <div class="coupon-section">
+                            <input type="text" id="couponCode" placeholder="كود الخصم">
+                            <button type="button" class="btn-apply-coupon">تطبيق</button>
+                        </div>
+
+                        <button type="button" class="btn btn-primary btn-block btn-complete" id="completeOrderBtn">
+                            <i class="fas fa-check-circle"></i>
+                            إتمام الطلب
+                        </button>
+
+                        <div class="security-badges">
+                            <i class="fas fa-lock"></i>
+                            <span>معاملات آمنة ومشفرة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ذيل الصفحة -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 متجر ياقوت. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- نافذة تأكيد الطلب -->
+    <div class="modal" id="orderConfirmModal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>تم إتمام طلبك بنجاح!</h2>
+            <p>رقم الطلب: <strong id="orderNumber"></strong></p>
+            <p>سيتم التواصل معك قريباً لتأكيد الطلب</p>
+            <button class="btn btn-primary" onclick="window.location.href='index.html'">
+                العودة للرئيسية
+            </button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

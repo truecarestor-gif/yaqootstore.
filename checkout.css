@@ -1,0 +1,538 @@
+/* ==========================================
+   صفحة إتمام الشراء
+   ========================================== */
+
+.checkout-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.progress-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+}
+
+.progress-step i {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--bg-light);
+    font-size: 1.5rem;
+    transition: var(--transition-fast);
+}
+
+.progress-step.active {
+    color: var(--primary-color);
+}
+
+.progress-step.active i {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.progress-line {
+    width: 80px;
+    height: 3px;
+    background-color: var(--border-color);
+    transition: var(--transition-fast);
+}
+
+.progress-line.active {
+    background-color: var(--primary-color);
+}
+
+/* المحتوى الرئيسي */
+.checkout-main {
+    padding: 40px 0;
+    background-color: var(--bg-light);
+    min-height: calc(100vh - 400px);
+}
+
+.checkout-container {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 30px;
+    align-items: start;
+}
+
+/* قسم النموذج */
+.checkout-form-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.checkout-form-section .section-title {
+    text-align: right;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.checkout-form-section .section-title::after {
+    display: none;
+}
+
+.form-section {
+    margin-bottom: 30px;
+    padding: 25px;
+    background-color: var(--bg-light);
+    border-radius: 15px;
+}
+
+.form-section h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.form-section h3 i {
+    color: var(--primary-color);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+    transition: var(--transition-fast);
+    background-color: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* خيارات الشحن */
+.shipping-options,
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.shipping-option,
+.payment-option {
+    display: block;
+    cursor: pointer;
+}
+
+.shipping-option input,
+.payment-option input {
+    display: none;
+}
+
+.shipping-option .option-content,
+.payment-option .option-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    transition: var(--transition-fast);
+}
+
+.shipping-option input:checked + .option-content,
+.payment-option input:checked + .option-content {
+    border-color: var(--primary-color);
+    background-color: var(--primary-light);
+}
+
+.payment-option .option-content {
+    gap: 15px;
+}
+
+.payment-option .option-content i {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.option-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.option-info strong {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.option-info span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.option-price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+/* ملخص الطلب */
+.order-summary-section {
+    position: relative;
+}
+
+.order-summary-sticky {
+    position: sticky;
+    top: 100px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+}
+
+.order-summary-sticky .section-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.order-summary-sticky .section-title::after {
+    display: none;
+}
+
+.order-items {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.order-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 10px;
+}
+
+.order-item-image {
+    width: 60px;
+    height: 60px;
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.order-item-image i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+.order-item-details {
+    flex: 1;
+}
+
+.order-item-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.order-item-quantity {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+}
+
+.order-item-price {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* المجاميع */
+.order-totals {
+    margin-bottom: 20px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1rem;
+}
+
+.total-row.discount-row {
+    color: var(--secondary-color);
+}
+
+.total-row.grand-total {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    padding: 20px 0;
+    border-bottom: none;
+    border-top: 2px solid var(--border-color);
+    margin-top: 10px;
+}
+
+.total-row.grand-total span:last-child {
+    color: var(--primary-color);
+}
+
+/* قسم الكوبون */
+.coupon-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.coupon-section input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    font-family: var(--font-family);
+    font-size: 0.95rem;
+}
+
+.coupon-section input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.btn-apply-coupon {
+    padding: 12px 25px;
+    background-color: var(--text-primary);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: var(--transition-fast);
+}
+
+.btn-apply-coupon:hover {
+    background-color: var(--primary-color);
+}
+
+/* زر إتمام الطلب */
+.btn-complete {
+    padding: 18px 30px;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* شارات الأمان */
+.security-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.security-badges i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* نافذة التأكيد */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 50px 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: var(--shadow-lg);
+    animation: modalSlideIn 0.4s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.success-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+    background: linear-gradient(135deg, #00b4aa, #008f87);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scaleIn 0.5s ease-out 0.2s both;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.success-icon i {
+    font-size: 4rem;
+    color: white;
+}
+
+.modal-content h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.modal-content p strong {
+    color: var(--primary-color);
+}
+
+.modal-content .btn {
+    margin-top: 30px;
+    padding: 15px 40px;
+}
+
+/* الاستجابة للأجهزة */
+@media (max-width: 968px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .order-summary-sticky {
+        position: static;
+    }
+    
+    .checkout-progress {
+        flex-wrap: wrap;
+    }
+    
+    .progress-line {
+        width: 50px;
+    }
+    
+    .progress-step span {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .checkout-form-section,
+    .order-summary-sticky {
+        padding: 20px;
+    }
+    
+    .form-section {
+        padding: 20px;
+    }
+    
+    .modal-content {
+        margin: 20px;
+        padding: 40px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-progress {
+        gap: 10px;
+    }
+    
+    .progress-step i {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .progress-step span {
+        font-size: 0.75rem;
+    }
+    
+    .progress-line {
+        width: 30px;
+    }
+}

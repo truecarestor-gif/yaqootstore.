@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="متجر ياقوت - أفضل المنتجات الصحية والتجميلية بأسعار تنافسية">
+    <title>متجر ياقوت - الرئيسية</title>
+    
+    <!-- الخطوط من Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- أيقونات Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- ملف CSS الرئيسي -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- شريط الإعلانات العلوي -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="announcement">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>عروض خاصة - خصم يصل إلى 50% على منتجات مختارة!</span>
+                </div>
+                <div class="top-links">
+                    <a href="#"><i class="fas fa-phone"></i> اتصل بنا</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> المساعدة</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- رأس الصفحة -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- الشعار -->
+                <div class="logo">
+                    <h1><i class="fas fa-gem"></i> متجر ياقوت</h1>
+                </div>
+
+                <!-- شريط البحث -->
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="ابحث عن المنتجات...">
+                    <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- أدوات الرأس -->
+                <div class="header-tools">
+                    <button class="icon-btn" id="userBtn">
+                        <i class="fas fa-user"></i>
+                        <span>حسابي</span>
+                    </button>
+                    <button class="icon-btn cart-btn" id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                        <span>السلة</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- قائمة التنقل -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-menu">
+                <li class="nav-item active"><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li class="nav-item"><a href="#products"><i class="fas fa-box"></i> المنتجات</a></li>
+                <li class="nav-item"><a href="#offers"><i class="fas fa-tag"></i> العروض</a></li>
+                <li class="nav-item"><a href="#supplements"><i class="fas fa-pills"></i> المكملات</a></li>
+                <li class="nav-item"><a href="#beauty"><i class="fas fa-spa"></i> التجميل</a></li>
+                <li class="nav-item"><a href="#contact"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- قسم البانر الرئيسي -->
+    <section class="hero-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h2 class="banner-title">منتجات صحية وجمالية</h2>
+                    <p class="banner-subtitle">اكتشف أفضل المنتجات بأسعار تنافسية</p>
+                    <button class="btn btn-primary btn-large">تسوق الآن</button>
+                </div>
+                <div class="banner-image">
+                    <i class="fas fa-heart-pulse"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الفئات -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">تسوق حسب الفئة</h2>
+            <div class="categories-grid">
+                <div class="category-card" data-category="supplements">
+                    <div class="category-icon">
+                        <i class="fas fa-pills"></i>
+                    </div>
+                    <h3>المكملات الغذائية</h3>
+                    <p>مكملات صحية عالية الجودة</p>
+                </div>
+                <div class="category-card" data-category="beauty">
+                    <div class="category-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>منتجات التجميل</h3>
+                    <p>عناية بالبشرة والشعر</p>
+                </div>
+                <div class="category-card" data-category="vitamins">
+                    <div class="category-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>الفيتامينات</h3>
+                    <p>فيتامينات طبيعية</p>
+                </div>
+                <div class="category-card" data-category="collagen">
+                    <div class="category-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>الكولاجين</h3>
+                    <p>كولاجين بحري وطبيعي</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المنتجات الأكثر مبيعاً -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الأكثر مبيعاً</h2>
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">الكل</button>
+                    <button class="filter-btn" data-filter="supplements">مكملات</button>
+                    <button class="filter-btn" data-filter="beauty">تجميل</button>
+                    <button class="filter-btn" data-filter="collagen">كولاجين</button>
+                </div>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- سيتم ملء المنتجات ديناميكياً عبر JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم العروض الخاصة -->
+    <section class="special-offers" id="offers">
+        <div class="container">
+            <h2 class="section-title">عروض خاصة</h2>
+            <div class="offers-grid" id="offersGrid">
+                <!-- سيتم ملء العروض ديناميكياً -->
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المنتجات الجديدة -->
+    <section class="products-section new-products">
+        <div class="container">
+            <h2 class="section-title">المنتجات الجديدة</h2>
+            <div class="products-grid" id="newProductsGrid">
+                <!-- سيتم ملء المنتجات الجديدة ديناميكياً -->
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المميزات -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>شحن سريع</h3>
+                    <p>توصيل مجاني للطلبات فوق 200 ريال</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>منتجات أصلية</h3>
+                    <p>جميع منتجاتنا أصلية 100%</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>دعم 24/7</h3>
+                    <p>خدمة عملاء على مدار الساعة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h3>إرجاع سهل</h3>
+                    <p>إمكانية الإرجاع خلال 14 يوم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ذيل الصفحة -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>عن متجر ياقوت</h3>
+                    <p>نوفر لكم أفضل المنتجات الصحية والتجميلية بأسعار تنافسية وجودة عالية</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#offers">العروض</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>خدمة العملاء</h3>
+                    <ul>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">الشروط والأحكام</a></li>
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>تواصل معنا</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +967 777 123 456</li>
+                        <li><i class="fas fa-envelope"></i> info@yaqootstore.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> صنعاء، اليمن</li>
+                    </ul>
+                    <h4>طرق الدفع المقبولة</h4>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 متجر ياقوت. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- سلة التسوق المنزلقة -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> سلة التسوق</h3>
+            <button class="close-btn" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- سيتم إضافة عناصر السلة هنا -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>المجموع:</span>
+                <span id="cartTotal">0 ريال</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="window.location.href='checkout.html'">
+                إتمام الشراء
+            </button>
+        </div>
+    </div>
+
+    <!-- الخلفية الداكنة -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ملف JavaScript الرئيسي -->
+    <script src="js/main.js"></script>
+</body>
+</html>
